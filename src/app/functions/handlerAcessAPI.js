@@ -7,7 +7,7 @@ const usuarios = [
 
 const getUserAuthenticated = (user) => {
     let userAuth = {};
-    usuarios.map((e) => {
+    usuarios.find((e) => {
         if(e.email === user.email && e.password === user.password){
             userAuth = e;
         };
