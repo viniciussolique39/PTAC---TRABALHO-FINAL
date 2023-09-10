@@ -11,6 +11,12 @@ export default function RegisterUsers() {
 
     const registrar = (e) => {
       e.preventDefault()
+      
+      const user = {
+        name: name,
+        password: password,
+        email: email
+      }
 
     }
 
