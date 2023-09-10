@@ -10,14 +10,19 @@ export default function Login() {
     email: '',
     password: '',
   });
-  const { push, refresh } = useRouter();
+  const { push } = useRouter();
 
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
       await handlerAcessUser(user);
+      const userAuth = await handlerAcessUser(user);
+      if(userAuth.token === undefined){
+        toast.error("erro com email ou a senha")
+      }
       push('/pages/dashboard');
     } catch {
+      refresh()
       toast.error("Erro na aplicação");
     }
   }
