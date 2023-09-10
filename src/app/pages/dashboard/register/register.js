@@ -4,41 +4,42 @@ import { useRouter } from 'next/navigation';
 
 export default function RegisterUsers() {
     const [user, setUser] = useState({ name: '', email: '', password: '', })
+    const route = useRouter();
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+
+    const registrar = (e) => {
+      e.preventDefault()
+
+    }
 
     return (
-        <div>
-      <h1>Cadastrar Usuários</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="nome">Nome:</label>
-          <input
-            type="text"
-            placeholder="digite seu nome"
-            name="nome"
-            value={user.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            placeholder="digite seu email"
-            name="email"
-            value={user.email}
-          />
-        </div>
-        <div>
-          <label htmlFor="senha">Senha:</label>
-          <input
-            type="password"
-            placeholder=" digite a senha que foi cadastrada!"
-            name="senha"
-            value={user.password}
-          />
-        </div>
-        <button type="submit">Cadastrar</button>
-      </form>
-    </div>
-  );
+         <div className='container'>
+            <h3 className='conta'>Cadastrar Usuários</h3>
+
+            <form className='contact_form' onSubmit={registrar}>
+
+                <div className='nome'> 
+                <input id='text' placeholder='digite seu nome' type="text" name="name" value={name}
+                onChange={e => setName(e.target.value)}/>  
+                </div>
+
+                <div className='email'>
+                <input placeholder='digite seu email' type="email" name="email" value={email}
+                onChange={e => setEmail(e.target.value)}/>
+                </div>
+
+                <div className='password'>
+                <input id='text' placeholder='digite uma senha' type="text" name="password" value={password}
+                onChange={e => setPassword(e.target.value)}/> 
+                </div>
+
+
+                <div className='submit'> 
+                <button id="form_button" type='submit'>Registrar Usuários</button>
+                </div>   
+            </form>
+            </div>
+    );
 }
