@@ -11,6 +11,7 @@ const handlerAcessUser = async (user) => {
     if (isTokenValidate) {
         Cookies.set('token', userAuth.token, { expires: 1 });
         localStorage.setItem('name', user.name);
+        localStorage.setItem('name', userAuth.name);
       return getUserAuthenticated
     }
     return userAuth;
