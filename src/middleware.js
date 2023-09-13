@@ -11,18 +11,13 @@ export const middleware = (request) => {
     if (!isTokenValidated || !token) {
         if (request.nextUrl.pathname === '/pages/dashboard') {
             return NextResponse.redirect(urlLogin);
+        }    
+
+        if (request.nextUrl.pathname === '/' && token)  
+         return NextResponse.redirect('/pages/dashboard');
         }
-    }
-
-    if(request.nextUrl.pathname === '/' && token) 
-    return NextResponse.redirect('/pages/dashboard');
-    
     NextResponse.next();
-
 };
-
-
 export const config = {
     matcher: ['/', '/pages/dashboard']
 };
-
