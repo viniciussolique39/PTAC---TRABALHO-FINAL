@@ -9,15 +9,15 @@ export const middleware = (request) => {
     const isTokenValidated = validateToken(token);
 
     if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard') {
+        if (request.nextUrl.pathname === '/pages/dashboard' &&  '/pages/register' && '/pages/alter') {
             return NextResponse.redirect(urlLogin);
         }    
 
         if (request.nextUrl.pathname === '/' && token)  
-         return NextResponse.redirect('/pages/dashboard');
+         return NextResponse.redirect('/pages/dashboard' &&  '/pages/register' && '/pages/alter');
         }
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard']
+    matcher: ['/', '/pages/dashboard', '/pages/register', '/pages/alter']
 };
