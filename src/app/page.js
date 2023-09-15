@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+
 export default function Login() {
   const [user, setUser] = useState({
     email: '',
@@ -25,6 +26,7 @@ export default function Login() {
       toast.error("Erro na aplicação");
     }
   }
+
   return (
     <div>
       <h1>Login</h1>
