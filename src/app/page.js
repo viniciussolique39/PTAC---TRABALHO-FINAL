@@ -30,17 +30,23 @@ export default function Login() {
 
   return (
     <div className="conteiner">
-      <h1>Preencha o Formulário de Login</h1>
-      <form className="tv" onSubmit={handlerLogin} >
-        <input placeholder='E-mail' type="email" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input>
-        <br/>
-        <br/>
-        <input placeholder='Senha' type='password' onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
-        <br/>
-        <br/>
+      <fieldset>
+      <legend><b>Preencha o Formulário</b></legend>
+      <form onSubmit={handlerLogin} >
+        <div className="inputBox">
+        <input placeholder='E-mail' type="email" class="inputUser" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input> 
+        <label form="email" class="labelInput">Email:</label>
+      </div>
+      <br/><br/>
+        <div className="inputBox">
+        <input placeholder='Senha' type='password' class="inputUser" onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
+        <label form="senha" class="labelInput">Senha:</label>
+        </div>
+        <br/><br/>
         <button className="botao">Entrar no Sistema</button>
         <ToastContainer/>
       </form>
+      </fieldset>
     </div>
   )
 }
