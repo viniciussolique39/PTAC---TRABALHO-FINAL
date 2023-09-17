@@ -23,7 +23,7 @@ export default function Register() {
     return (
          <div className='conteiner'>
           <fieldset>
-            <legend><b>Cadastrar Usuários</b></legend>
+            <legend><b>Registrar Usuários</b></legend>
                 <form onSubmit={registrar}>
                 <div className='inputBox'> 
                 <input id='text' placeholder='Digite seu nome' type="text" name="name"  className="inputUser" value={name} onChange={e => setName(e.target.value)}/>  
