@@ -22,7 +22,7 @@ export default function Alterar() {
 
     return (
          <div className='container'>
-            <h3 className='conta'>Cadastrar Usuários</h3>
+            <h3 className='h3'>Cadastrar Usuários</h3>
 
             <form className='contact_form' onSubmit={alterar}>
 
