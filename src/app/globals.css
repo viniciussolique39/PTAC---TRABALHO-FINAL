@@ -27,6 +27,7 @@ legend{
     border: 1px solid dodgerblue;
     padding: 10px; 
     text-align: center;
+    color:#fff;
     background-color: dodgerblue ;
     border-radius: 8px;
 }
