@@ -31,7 +31,7 @@ export default function Login() {
   return (
     <div className="conteiner">
       <fieldset>
-      <legend><b>Preencha o Formulário</b></legend>
+      <legend><b>Faça Login</b></legend>
       <form onSubmit={handlerLogin} >
         <div className="inputBox">
         <input placeholder='E-mail' type="email" class="inputUser" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input> 
