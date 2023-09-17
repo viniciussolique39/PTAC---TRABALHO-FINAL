@@ -8,7 +8,7 @@ export default async function Dashboard() {
         <legend><b>Listando Usuários</b></legend>
 
         {users.map(user => (
-            <div>
+            <div className="inputBox">
                 <h2>{user.name}</h2>
                 
                 <h2>{user.email}</h2>
