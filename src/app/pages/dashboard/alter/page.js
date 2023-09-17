@@ -21,31 +21,28 @@ export default function Alterar() {
     }
 
     return (
-         <div className='container'>
-            <h3 className='h3'>Cadastrar Usuários</h3>
-
-            <form className='contact_form' onSubmit={alterar}>
-
-                <div className='nome'> 
-                <input id='text' placeholder='digite seu nome' type="text" name="name" value={name}
-                onChange={e => setName(e.target.value)}/>  
+         <div className='conteiner'>
+          <fieldset>
+            <legend><b>Alterar Usuários</b></legend>
+            <form onSubmit={alterar}>
+                <div className='inputBox'> 
+                <input id='text' placeholder='Digite seu Nome' type="text" name="name" className="inputUser" value={name} onChange={e => setName(e.target.value)}/>
+                <label for="nome" class="labelInput">Nome:</label>
                 </div>
-
-                <div className='email'>
-                <input placeholder='digite seu email' type="email" name="email" value={email}
-                onChange={e => setEmail(e.target.value)}/>
+                <br/><br/>
+                <div className='inputBox'>
+                <input placeholder='Digite seu E-mail' type="email" name="email" className="inputUser" value={email} onChange={e => setEmail(e.target.value)}/>
+                <label for="email"  class="labelInput">  E-mail: </label>
                 </div>
-
-                <div className='password'>
-                <input id='text' placeholder='digite uma senha' type="text" name="password" value={password}
-                onChange={e => setPassword(e.target.value)}/> 
+                <br/><br/>
+                <div className='inputBox'>
+                <input id='text' placeholder='Digite uma Senha' type="text" name="password"  className="inputUser" value={password} onChange={e => setPassword(e.target.value)}/>
+                <label for="senha"  class="labelInput">  Senha: </label>
                 </div>
-
-
-                <div className='submit'> 
-                <button id="form_button" type='submit'>Alterar Usuários</button>
-                </div>   
+                <br/><br/>
+                <button className="botao">Alterar Usuários</button>
             </form>
+            </fieldset>
             </div>
     );
 }
