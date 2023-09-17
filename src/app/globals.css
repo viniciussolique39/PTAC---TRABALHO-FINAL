@@ -28,7 +28,7 @@ legend{
     padding: 10px; 
     text-align: center;
     background-color: dodgerblue ;
-   border-radius: 8px;
+    border-radius: 8px;
 }
 
 .inputBox{
@@ -80,6 +80,16 @@ color: dodgerblue;
 }
 
 .botao:disabled{
-    background-color: #ccc; 
+  background-color: #ccc; 
   cursor: not-allowed;
+}
+
+.lista{
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
 }
