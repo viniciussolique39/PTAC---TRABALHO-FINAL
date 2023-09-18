@@ -19,7 +19,7 @@ export default function Login() {
     try {
       await handlerAcessUser(user);
       const userAuth = await handlerAcessUser(user);
-      if(userAuth.token === undefined){
+      if (userAuth.token === undefined) {
       }
       push('/pages/dashboard');
     } catch {
@@ -31,21 +31,26 @@ export default function Login() {
   return (
     <div className="conteiner">
       <fieldset>
-      <legend><b>Faça Login</b></legend>
-      <form onSubmit={handlerLogin} >
-        <div className="inputBox">
-        <input placeholder='E-mail' type="email" class="inputUser" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input> 
-        <label form="email" class="labelInput">Email:</label>
-      </div>
-      <br/><br/>
-        <div className="inputBox">
-        <input placeholder='Senha' type='password' class="inputUser" onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
-        <label form="senha" class="labelInput">Senha:</label>
-        </div>
-        <br/><br/>
-        <button className="botao">Entrar no Sistema</button>
-        <ToastContainer/>
-      </form>
+        <legend><b>Faça Login</b></legend>
+        <form onSubmit={handlerLogin} >
+          <div className="inputBox">
+            <input placeholder='E-mail' type="email" class="inputUser" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input>
+            <label form="email" class="labelInput">Email:</label>
+          </div>
+          <br /><br />
+          <div className="inputBox">
+            <input placeholder='Nome' type='name' class="inputUser" onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
+            <label form="name" class="labelInput">Nome:</label>
+          </div>
+          <br /><br />
+          <div className="inputBox">
+            <input placeholder='Senha' type='password' class="inputUser" onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
+            <label form="senha" class="labelInput">Senha:</label>
+          </div>
+          <br /><br />
+          <button className="botao">Entrar no Sistema</button>
+          <ToastContainer />
+        </form>
       </fieldset>
     </div>
   )
