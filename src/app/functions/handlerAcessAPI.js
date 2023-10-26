@@ -19,11 +19,30 @@
 
 const url="https://aula-17-10-lemon.vercel.app";
 
-const getUserAuthenticated = (user) => { 
+const getUserAuthenticated = async (user) => { 
    
+   const responseOfApi = await fetch(url + "/user/authenticate",
+    
+   {
+      method:'POST',
+      headers:{"content-type": "aplication/json"},
+      body: JSON.stringify(user)
+    }
+
+   );
+   const userAuth = await responseOfApi.json();
+   return userAuth;
+    
  }
  
- const getUsers = () =>{
+ const getUsers =  async () => {
+   const responseOfApi = await fetch(url + "/users", {
+      method:"GET",
+      headers: { "Content-Type": "aplication/json" }
+   })
    
+   const users = await responseOfApi.json();
+   return users;
+
  }
  export { getUsers, getUserAuthenticated };

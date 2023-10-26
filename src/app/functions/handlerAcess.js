@@ -6,7 +6,7 @@ const handlerAcessUser = async (user) => {
 
     const userAuth = await getUserAuthenticated(user);
     
-    const isTokenValidate = validateToken(userAuth.token);
+    const isTokenValidate = await validateToken(userAuth.token);
 
     if (isTokenValidate) {
         Cookies.set('token', userAuth.token, { expires: 1 });
