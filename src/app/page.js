@@ -12,7 +12,8 @@ export default function Login() {
     email: '',
     password: '',
   });
-  const { push } = useRouter();
+
+  const { push, refresh } = useRouter();
 
   const handlerLogin = async (e) => {
     e.preventDefault();
@@ -23,8 +24,8 @@ export default function Login() {
       }
       push('/pages/dashboard');
     } catch {
-
       toast.error("Erro na aplicação");
+      refresh();
     }
   }
 
@@ -45,7 +46,6 @@ export default function Login() {
           <br />
           <button className="botao">Acessar</button>
           <br/>
-          <p className="botao"><a href="#"></a>Esqueceu a senha?</p>
           <ToastContainer />
         </form>
       </fieldset>

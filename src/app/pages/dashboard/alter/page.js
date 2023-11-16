@@ -21,7 +21,7 @@ export default function Alterar() {
     }
 
     return (
-         <div className='conteiner'>
+         <div className="conteiner">
           <fieldset>
             <legend><b>Alterar Usuários</b></legend>
             <form onSubmit={alterar}>

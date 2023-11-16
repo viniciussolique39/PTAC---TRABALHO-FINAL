@@ -6,7 +6,6 @@ body {
 }
 
 .conteiner{
-
     color:white;
     position: absolute;
     top: 50%;
@@ -16,6 +15,7 @@ body {
     padding: 15px;
     border-radius: 15px; 
     width:25%;
+    text-align: center;
 
 }
 
@@ -92,5 +92,15 @@ color: dodgerblue;
     pointer-events: none;
     transition: .5s;
     font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.socorro{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.usuario{
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
