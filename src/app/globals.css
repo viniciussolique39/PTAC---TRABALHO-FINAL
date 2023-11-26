@@ -1,7 +1,7 @@
 body{
     background-color: rgb(74, 82, 239 113, 175);
 }
-.mainDiv {
+.principal {
     display: flex;
     justify-content: center;
     align-items: center;

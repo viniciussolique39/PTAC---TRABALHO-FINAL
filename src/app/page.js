@@ -30,25 +30,21 @@ export default function Login() {
   }
 
   return (
-    <div className="conteiner">
-      <fieldset>
-        <legend><b>Acesso à pataforma</b></legend>
-        <form onSubmit={handlerLogin} >
-          <div className="inputBox">
-            <input placeholder='E-mail' type="email" class="inputUser" onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input>
-            <label form="email" class="labelInput">Email:</label>
-          </div>
-          <br /><br />
-          <div className="inputBox">
-            <input placeholder='Senha' type='password' class="inputUser" onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
-            <label form="senha" class="labelInput">Senha:</label>
-          </div>
-          <br />
-          <button className="botao">Acessar</button>
-          <br/>
-          <ToastContainer />
+    <div>
+      <h1>Autenticação de acesso</h1>
+    <div className="principal">
+
+        <form onSubmit={handlerLogin}>
+
+        <input placeholder='E-mail' type="email" onChange={(e) => { setUser({ ...user, email: e.target.value })}}></input>
+
+        <input placeholder='Senha' type='password' onChange={(e) => { setUser({ ...user, password: e.target.value })}}></input>
+
+        <button className="botao">Entrar</button>
+        
         </form>
-      </fieldset>
+        <ToastContainer />
+    </div>
     </div>
   )
 }
