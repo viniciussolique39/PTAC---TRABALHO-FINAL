@@ -9,10 +9,14 @@ export default function RegistrarUsuario() {
     const [user, setUser] = useState ({
         name: '',
         email: '',
-        password: '',
+        password: ''
 });
 
 const {push} = useRouter();
+
+const enviado = () => {
+    toast.success("Dados enviados!");
+};
 
 const handlerFormSubmit = async(event) =>{
     event.preventDefault();
@@ -24,7 +28,7 @@ const handlerFormSubmit = async(event) =>{
       });
       return push("/pages/dashboard");
   }catch{
-      return toast.error('erro');
+      return toast.error('Erro');
   }
 };
 return (

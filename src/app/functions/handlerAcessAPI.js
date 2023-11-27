@@ -13,7 +13,6 @@ const getUserAuthenticated = async (user) => {
 
    );
    const userAuth = await responseOfApi.json();
-   console.log (userAuth)
    return userAuth;
     
  }
@@ -30,7 +29,7 @@ const getUserAuthenticated = async (user) => {
 
  }
 
- const postUser = async (user) => {
+ const postUsers = async (user) => {
   try{
     const responseOfApi = await fetch(url + "/user", {
       method: "POST",
@@ -46,4 +45,4 @@ const getUserAuthenticated = async (user) => {
   }
  }
 
- export { getUsers, getUserAuthenticated, postUser};
+ export { getUsers, getUserAuthenticated, postUsers};
