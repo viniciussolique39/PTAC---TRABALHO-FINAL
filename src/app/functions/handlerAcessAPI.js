@@ -29,20 +29,21 @@ const getUserAuthenticated = async (user) => {
 
  }
 
- const postUsers = async (user) => {
+ const updateUser = async (user, id) => {
   try{
-    const responseOfApi = await fetch(url + "/user", {
-      method: "POST",
-      headers:{ "Content-Type":"application/json" },
+    const responseOfApi = await fetch(url + "/user/" + id, {
+      method: "PUT",
+      headers:{ 
+        "Content-Type":"application/json"
+       },
       body:JSON.stringify(user)
     });
-    const userSave = await responseOfApi.json();
-    console.log(userSave)
-    return userSave;
+    const useerUpdate = await responseOfApi.json();
+    return useerUpdate;
   }
   catch{
     return null
   }
  }
 
- export { getUsers, getUserAuthenticated, postUsers};
+ export { getUsers, getUserAuthenticated, updateUser};

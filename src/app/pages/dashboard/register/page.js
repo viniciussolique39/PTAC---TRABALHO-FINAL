@@ -1,5 +1,5 @@
 'use client'
-import { postUsers } from "@/app/functions/handlerAcessAPI";
+import { updateUser } from "@/app/functions/handlerAcessAPI";
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
 import {ToastContainer, toast } from 'react-toastify'; 
@@ -21,7 +21,7 @@ const enviado = () => {
 const handlerFormSubmit = async(event) =>{
     event.preventDefault();
     try{
-        await postUsers(user);
+        await updateUser(user);
         await new Promise((resolve) => {
         toast.success ('Usuário cadastrado com sucesso!');
         setTimeout(resolve, 5000);
